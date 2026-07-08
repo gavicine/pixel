@@ -10,12 +10,12 @@ const runtimeData = (function () {
         productDescription: "",
 
         // File references.
-        buildURL: "bin",
-        loaderURL: "bin/PixelPath_Web.loader.js",
-        dataURL: "bin/PixelPath_Web.data.unityweb",
-        frameworkURL: "bin/PixelPath_Web.framework.js.unityweb",
+        buildURL: "",
+        loaderURL: "PixelPath_Web.loader.js",
+        dataURL: "PixelPath_Web.data.unityweb",
+        frameworkURL: "PixelPath_Web.framework.js.unityweb",
         workerURL: "",
-        codeURL: "bin/PixelPath_Web.wasm.unityweb",
+        codeURL: "PixelPath_Web.wasm.unityweb",
         symbolsURL: "",
         streamingURL: "streaming",
 
