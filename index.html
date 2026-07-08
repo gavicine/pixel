@@ -1,12 +1,12 @@
-<!doctype html>
-<html lang="en-us">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>Pixel Path</title>
 </head>
-<body style="margin:0; padding:0; overflow:hidden; background:#000;">
+<body style="margin:0; padding:0; background:#000;">
     <canvas id="unity-canvas" style="width: 100vw; height: 100vh;"></canvas>
-
+    
     <script src="PixelPath_Web.loader.js"></script>
     <script>
         var config = {
@@ -14,8 +14,7 @@
             frameworkUrl: "PixelPath_Web.framework.js.unityweb",
             codeUrl: "PixelPath_Web.wasm.unityweb",
         };
-        createUnityInstance(document.querySelector("#unity-canvas"), config)
-            .catch((message) => { alert(message); });
+        createUnityInstance(document.querySelector("#unity-canvas"), config);
     </script>
 </body>
 </html>
