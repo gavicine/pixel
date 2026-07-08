@@ -2,56 +2,20 @@
 <html lang="en-us">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Pixel Path</title>
-    
-    <script>var baseURL = "https://cdn.jsdelivr.net/gh/gavicine/pixel@main/";</script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gavicine/pixel@main/main.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/gavicine/pixel@main/diagnostics.css">
-    
-    <script type="text/javascript">
-        function onRuntimeDataReady() {
-            document.title = runtimeData.productName;
-            
-            let rotationLockScript = document.createElement("script");
-            rotationLockScript.src = baseURL + "rotationLock.js";
-            document.head.appendChild(rotationLockScript);
-        }
-    </script>
-    <script src="https://cdn.jsdelivr.net/gh/gavicine/pixel@main/runtimeData.js" onload="onRuntimeDataReady()"></script>
 </head>
-<body>
-    <div id="unity-container">
-        <canvas id="unity-canvas" tabindex="-1"></canvas>
-        <div id="unity-loading-bar">
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
-            </div>
-        </div>
-    </div>
+<body style="margin:0; padding:0; overflow:hidden; background:#000;">
+    <canvas id="unity-canvas" style="width: 100vw; height: 100vh;"></canvas>
 
-    <script type="text/javascript">
-        window.addEventListener("load", () => {
-            document.body.style.backgroundImage = "url('" + baseURL + runtimeData.backgroundTextureName + "')";
-            
-            // ფაილები პირდაპირ "root"-შია, ამიტომ პრეფიქსები აღარ გვჭირდება
-            const scripts = ["diagnostics.js", "application.js", "aspectRatio.js", "commonFixes.js"];
-            scripts.forEach(src => {
-                let s = document.createElement("script");
-                s.src = baseURL + src;
-                document.body.appendChild(s);
-            });
-
-            // თამაშის ჩამტვირთავი
-            let loader = document.createElement("script");
-            loader.src = baseURL + runtimeData.wrapperScript + "?r=" + Math.random();
-            loader.onload = () => {
-                if (typeof initializeWrapper === 'function') initializeWrapper();
-                else application.initialize();
-            };
-            document.body.appendChild(loader);
-        });
+    <script src="PixelPath_Web.loader.js"></script>
+    <script>
+        var config = {
+            dataUrl: "PixelPath_Web.data.unityweb",
+            frameworkUrl: "PixelPath_Web.framework.js.unityweb",
+            codeUrl: "PixelPath_Web.wasm.unityweb",
+        };
+        createUnityInstance(document.querySelector("#unity-canvas"), config)
+            .catch((message) => { alert(message); });
     </script>
 </body>
 </html>
