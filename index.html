@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Pixel Path</title>
+    <style>
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background: #000; }
+        #unity-container { width: 100vw; height: 100vh; position: relative; }
+        #unity-canvas { width: 100%; height: 100%; display: block; }
+    </style>
+</head>
+<body>
+    <div id="unity-container">
+        <canvas id="unity-canvas"></canvas>
+    </div>
+
+    <script src="PixelPath_Web.loader.js"></script>
+    <script>
+        var config = {
+            dataUrl: "PixelPath_Web.data.unityweb",
+            frameworkUrl: "PixelPath_Web.framework.js.unityweb",
+            codeUrl: "PixelPath_Web.wasm.unityweb",
+            companyName: "DefaultCompany",
+            productName: "Pixel Path",
+            productVersion: "0.1",
+        };
+
+        createUnityInstance(document.querySelector("#unity-canvas"), config)
+            .catch((message) => { alert("შეცდომა: " + message); });
+    </script>
+</body>
+</html>
