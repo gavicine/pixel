@@ -4,18 +4,18 @@ const runtimeData = (function () {
 
         // Basic information.
         companyName: "DefaultCompany",
-        productName: "Pixel Path - MeeGames",
+        productName: "Pixel Path - classroom4x.dev",
         productVersion: "0.1",
         sdkVersion: "3.19.12+merge4",
         productDescription: "",
 
         // File references.
         buildURL: "",
-        loaderURL: "PixelPath_Web.loader.js",
-        dataURL: "PixelPath_Web.data.unityweb",
-        frameworkURL: "PixelPath_Web.framework.js.unityweb",
+        loaderURL: "https://cdn.jsdelivr.net/gh/gavicine/pixel@main/PixelPath_Web.loader.js",
+        dataURL: "https://cdn.jsdelivr.net/gh/gavicine/pixel@main/PixelPath_Web.data.unityweb",
+        frameworkURL: "https://cdn.jsdelivr.net/gh/gavicine/pixel@main/PixelPath_Web.framework.js.unityweb",
         workerURL: "",
-        codeURL: "PixelPath_Web.wasm.unityweb",
+        codeURL: "https://cdn.jsdelivr.net/gh/gavicine/pixel@main/PixelPath_Web.wasm.unityweb",
         symbolsURL: "",
         streamingURL: "streaming",
 
